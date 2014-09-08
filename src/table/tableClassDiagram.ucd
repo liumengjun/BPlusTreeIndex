@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="tableClassDiagram" foregroundRGB="255,255,255" id="{UMLID=_KlRyc2J0Ed-xWeWwTs5e_Q,JavaID=table}" metadata="uml2-1.0" initialized="true" scrolledX="341" scrolledY="81" tag="10" key="32303037303632392042506C757354726565496E646578">
+  <children xsi:type="editmodel:ClassEditModel" name="UpdateSetPair" location="640,109" size="172,209" timstampe="1672" stereotype="" id="{UMLID=_Ko2D0GJ0Ed-xWeWwTs5e_Q,JavaID=table/UpdateSetPair}" runTimeClassModel="main([Ljava.lang.String;),newValue,getPairsFromDDLString(Ljava.lang.String;),updateRecordByFields([Ljava.lang.String;[Ltable.Field;),UpdateSetPair(Ljava.lang.String;Ljava.lang.String;),parseDDLString(Ljava.lang.String;),fieldName,updateRecordByFields([Ljava.lang.String;[Ltable.Field;[Ltable.UpdateSetPair;),toString()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="79,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="fieldName" size="76,16" id="{UMLID=_V8E2ImJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="newValue" size="79,16" id="{UMLID=_V8E2IGJ1Ed-xWeWwTs5e_Q}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="151,126">
+      <children xsi:type="editmodel:MethodEditModel" name="UpdateSetPair" size="108,16" id="{UMLID=_V8hiGGJ1Ed-xWeWwTs5e_Q,JavaID=table/UpdateSetPair#UpdateSetPair(Ljava.lang.String;Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateRecordByFields" size="149,16" id="{UMLID=_V8YYKGJ1Ed-xWeWwTs5e_Q,JavaID=table/UpdateSetPair#updateRecordByFields([Ljava.lang.String;[Ltable.Field;[Ltable.UpdateSetPair;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateRecordByFields" size="149,16" id="{UMLID=_V8rTEmJ1Ed-xWeWwTs5e_Q,JavaID=table/UpdateSetPair#updateRecordByFields([Ljava.lang.String;[Ltable.Field;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" size="77,16" id="{UMLID=_V8E2JGJ1Ed-xWeWwTs5e_Q,JavaID=table/UpdateSetPair#toString()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="parseDDLString" size="116,16" id="{UMLID=_V8OnKWJ1Ed-xWeWwTs5e_Q,JavaID=table/UpdateSetPair#parseDDLString(Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPairsFromDDLString" size="151,16" id="{UMLID=_V8OnImJ1Ed-xWeWwTs5e_Q,JavaID=table/UpdateSetPair#getPairsFromDDLString(Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="main" size="62,16" id="{UMLID=_V8YYJGJ1Ed-xWeWwTs5e_Q,JavaID=table/UpdateSetPair#main([Ljava.lang.String;)}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showMethods="true" showAttributes="true" showLiterals="true" ShowInnerEntity="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="WhereCondition" location="420,109" size="186,533" timstampe="7158" stereotype="" id="{UMLID=_KojI7WJ0Ed-xWeWwTs5e_Q,JavaID=table/WhereCondition}" runTimeClassModel="referencValue,main([Ljava.lang.String;),checkRecordByFields([Ljava.lang.String;[Ltable.Field;),comparisonOp,compareByOp(IJJ),NotEqualOp,toString(),WhereCondition(Ljava.lang.String;ILjava.lang.String;Z),negation,RelationAndOp,GreatThanOp,WhereCondition(Ljava.lang.String;ILjava.lang.String;),fieldName,RelationNotOp,LikeOp,RelationOrOp,LessEqualOp,checkRecordByFields([Ljava.lang.String;[Ltable.Field;[Ltable.WhereCondition;[I),EqualOp,parseDDLString(Ljava.lang.String;),GreatEqualOp,testBoolAndOrs([Z[I),compareByOp(ILjava.lang.String;Ljava.lang.String;),getWheresFromDDLString(Ljava.lang.String;Ljava.lang.Integer;),checkRecordByFields([Ljava.lang.String;[Ltable.Field;[Ltable.WhereCondition;),LessThanOp,getAndOrs(Ljava.lang.Integer;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="101,252">
+      <children xsi:type="editmodel:AttributeEditModel" name="fieldName" size="76,16" id="{UMLID=_WCCUMGJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="comparisonOp" size="99,16" id="{UMLID=_WBvZQmJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="referencValue" size="99,16" id="{UMLID=_WBmPUGJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="negation" size="70,16" id="{UMLID=_WB5KQmJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="EqualOp" size="69,16" id="{UMLID=_WBvZRmJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="LessThanOp" size="91,16" id="{UMLID=_WB5KSGJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="GreatThanOp" size="94,16" id="{UMLID=_WB5KRmJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="LessEqualOp" size="93,16" id="{UMLID=_WBvZRGJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="GreatEqualOp" size="96,16" id="{UMLID=_WBvZSGJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="NotEqualOp" size="85,16" id="{UMLID=_WB5KQGJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="LikeOp" size="62,16" id="{UMLID=_WBmPVGJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="RelationAndOp" size="101,16" id="{UMLID=_WB5KRGJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="RelationOrOp" size="93,16" id="{UMLID=_WBvZQGJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="RelationNotOp" size="97,16" id="{UMLID=_WBmPUmJ1Ed-xWeWwTs5e_Q}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="165,234">
+      <children xsi:type="editmodel:MethodEditModel" name="WhereCondition" size="116,16" id="{UMLID=_WDiJBGJ1Ed-xWeWwTs5e_Q,JavaID=table/WhereCondition#WhereCondition(Ljava.lang.String;ILjava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="WhereCondition" size="116,16" id="{UMLID=_WCoxJ2J1Ed-xWeWwTs5e_Q,JavaID=table/WhereCondition#WhereCondition(Ljava.lang.String;ILjava.lang.String;Z)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" size="77,16" id="{UMLID=_WCoxJGJ1Ed-xWeWwTs5e_Q,JavaID=table/WhereCondition#toString()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="parseDDLString" size="116,16" id="{UMLID=_WCMFNmJ1Ed-xWeWwTs5e_Q,JavaID=table/WhereCondition#parseDDLString(Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getWheresFromDDLString" size="165,16" id="{UMLID=_WCyiJmJ1Ed-xWeWwTs5e_Q,JavaID=table/WhereCondition#getWheresFromDDLString(Ljava.lang.String;Ljava.lang.Integer;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAndOrs" size="93,16" id="{UMLID=_WDOnBWJ1Ed-xWeWwTs5e_Q,JavaID=table/WhereCondition#getAndOrs(Ljava.lang.Integer;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="checkRecordByFields" size="145,16" id="{UMLID=_WCCUMmJ1Ed-xWeWwTs5e_Q,JavaID=table/WhereCondition#checkRecordByFields([Ljava.lang.String;[Ltable.Field;[Ltable.WhereCondition;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="checkRecordByFields" size="145,16" id="{UMLID=_WDFdE2J1Ed-xWeWwTs5e_Q,JavaID=table/WhereCondition#checkRecordByFields([Ljava.lang.String;[Ltable.Field;[Ltable.WhereCondition;[I)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testBoolAndOrs" size="117,16" id="{UMLID=_WCV2MGJ1Ed-xWeWwTs5e_Q,JavaID=table/WhereCondition#testBoolAndOrs([Z[I)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="checkRecordByFields" size="145,16" id="{UMLID=_WCfAJWJ1Ed-xWeWwTs5e_Q,JavaID=table/WhereCondition#checkRecordByFields([Ljava.lang.String;[Ltable.Field;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="compareByOp" size="109,16" id="{UMLID=_WCV2OWJ1Ed-xWeWwTs5e_Q,JavaID=table/WhereCondition#compareByOp(IJJ)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="compareByOp" size="109,16" id="{UMLID=_WDYYBWJ1Ed-xWeWwTs5e_Q,JavaID=table/WhereCondition#compareByOp(ILjava.lang.String;Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="main" size="62,16" id="{UMLID=_WDYYAWJ1Ed-xWeWwTs5e_Q,JavaID=table/WhereCondition#main([Ljava.lang.String;)}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showMethods="true" showAttributes="true" showLiterals="true" ShowInnerEntity="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Field" location="850,109" size="192,497" timstampe="6946" stereotype="" id="{UMLID=_KoQN-mJ0Ed-xWeWwTs5e_Q,JavaID=table/Field}" runTimeClassModel="checkRecordByFields([Ljava.lang.String;[Ltable.Field;),DefaultCharSize,toDDLString(),Field(Ljava.lang.String;I),getFieldName(),VarcharType,toString(),parseStringsToBytes([Ljava.lang.String;[Ltable.Field;Ljava.lang.String;),IntType,fieldName,showDetail(),getFieldsFromDDLString(Ljava.lang.String;),CharType,fieldType,parseString(Ljava.lang.String;),checkFieldsNamesUnique([Ljava.lang.String;),parseDDLString(Ljava.lang.String;),getTypeByNameFromFields([Ljava.lang.String;[Ltable.Field;),TypeError,parseBytesToStrings([B[Ltable.Field;),fieldSize,getValueByFieldName([Ltable.Field;),Field(Ljava.lang.String;II),main([Ltable.Field;Ljava.lang.String;),BigintType">
+    <children xsi:type="editmodel:CompartmentEditModel" size="107,162">
+      <children xsi:type="editmodel:AttributeEditModel" name="fieldName" size="76,16" id="{UMLID=_WRFc0GJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="fieldType" size="73,16" id="{UMLID=_WQ8S5mJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="fieldSize" size="70,16" id="{UMLID=_WQ8S5GJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="TypeError" size="77,16" id="{UMLID=_WQyh4GJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="IntType" size="64,16" id="{UMLID=_WQ8S6GJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="BigintType" size="79,16" id="{UMLID=_WRFc1GJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="VarcharType" size="93,16" id="{UMLID=_WRFc0mJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="CharType" size="76,16" id="{UMLID=_WQ8S4mJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="DefaultCharSize" size="107,16" id="{UMLID=_WQ8S4GJ1Ed-xWeWwTs5e_Q}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="171,288">
+      <children xsi:type="editmodel:MethodEditModel" name="Field" size="62,16" id="{UMLID=_WSlRoGJ1Ed-xWeWwTs5e_Q,JavaID=table/Field#Field(Ljava.lang.String;I)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Field" size="62,16" id="{UMLID=_WR-0umJ1Ed-xWeWwTs5e_Q,JavaID=table/Field#Field(Ljava.lang.String;II)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getFieldName" size="104,16" id="{UMLID=_WSbgp2J1Ed-xWeWwTs5e_Q,JavaID=table/Field#getFieldName()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" size="77,16" id="{UMLID=_WRiIw2J1Ed-xWeWwTs5e_Q,JavaID=table/Field#toString()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toDDLString" size="97,16" id="{UMLID=_WRr5ymJ1Ed-xWeWwTs5e_Q,JavaID=table/Field#toDDLString()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="parseBytesToStrings" size="142,16" id="{UMLID=_WR1DsWJ1Ed-xWeWwTs5e_Q,JavaID=table/Field#parseBytesToStrings([B[Ltable.Field;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="checkRecordByFields" size="142,16" id="{UMLID=_WR1DvGJ1Ed-xWeWwTs5e_Q,JavaID=table/Field#checkRecordByFields([Ljava.lang.String;[Ltable.Field;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTypeByNameFromFields" size="145,16" id="{UMLID=_WRiIxmJ1Ed-xWeWwTs5e_Q,JavaID=table/Field#getTypeByNameFromFields([Ljava.lang.String;[Ltable.Field;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="showDetail" size="94,16" id="{UMLID=_WRY-1WJ1Ed-xWeWwTs5e_Q,JavaID=table/Field#showDetail()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="parseString" size="96,16" id="{UMLID=_WRPN02J1Ed-xWeWwTs5e_Q,JavaID=table/Field#parseString(Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="parseDDLString" size="116,16" id="{UMLID=_WRY-1mJ1Ed-xWeWwTs5e_Q,JavaID=table/Field#parseDDLString(Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getFieldsFromDDLString" size="155,16" id="{UMLID=_WRPN2GJ1Ed-xWeWwTs5e_Q,JavaID=table/Field#getFieldsFromDDLString(Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getValueByFieldName" size="163,16" id="{UMLID=_WRFc1mJ1Ed-xWeWwTs5e_Q,JavaID=table/Field#getValueByFieldName([Ltable.Field;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="main" size="171,16" id="{UMLID=_WSRvqmJ1Ed-xWeWwTs5e_Q,JavaID=table/Field#main([Ltable.Field;Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="parseStringsToBytes" size="145,16" id="{UMLID=_WSIluGJ1Ed-xWeWwTs5e_Q,JavaID=table/Field#parseStringsToBytes([Ljava.lang.String;[Ltable.Field;Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="checkFieldsNamesUnique" size="62,16" id="{UMLID=_WSIltGJ1Ed-xWeWwTs5e_Q,JavaID=table/Field#checkFieldsNamesUnique([Ljava.lang.String;)}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showMethods="true" showAttributes="true" showLiterals="true" ShowInnerEntity="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0" name="Table" location="30,109" size="152,597" timstampe="9227" stereotype="" id="{UMLID=_g9dVYGJ0Ed-xWeWwTs5e_Q,JavaID=table/Table}" runTimeClassModel="createTable([Ltable.WhereCondition;),updateBitMap(Lfileio.BitMap;),isTableExist(),toDDLString(),updateTable([Ljava.lang.String;),initialRecordNum,Table(),deleteAllFromTable(),MapFileExt,CfgFileExt,rootDir,selectFromTable([Ltable.WhereCondition;),getTablePath(),getFieldCfg(Ljava.lang.String;),tableName,recordNumIncrement,deleteFromTable([Ltable.UpdateSetPair;[Ltable.WhereCondition;),getTableFields(),insertIntoTable(Ljava.lang.String;[Ltable.Field;),selectAllFromTable(),createTable([Ltable.Field;),deleteFromTable([Ltable.UpdateSetPair;[Ltable.WhereCondition;[I),getTableName(),main([Ltable.WhereCondition;[I),getTableBitMap(),selectFromTable([Ljava.lang.String;),Table(Ljava.lang.String;),updateTable([Ltable.WhereCondition;[I),DataFileExt,tableFields">
+    <children xsi:type="editmodel:CompartmentEditModel" size="129,126">
+      <children xsi:type="editmodel:AttributeEditModel" name="initialRecordNum" size="108,16" id="{UMLID=_Veuy0GJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="recordNumIncrement" size="129,16" id="{UMLID=_Veuy1mJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rootDir" size="61,16" id="{UMLID=_Ve38wWJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="CfgFileExt" size="77,16" id="{UMLID=_Veuy1GJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="DataFileExt" size="82,16" id="{UMLID=_Veuy2GJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="MapFileExt" size="80,16" id="{UMLID=_Veuy0mJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tableName" size="79,16" id="{UMLID=_VelB0GJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tableFields" size="86,21" id="{UMLID=_Ve38w2J1Ed-xWeWwTs5e_Q}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="131,401">
+      <children xsi:type="editmodel:MethodEditModel" name="selectFromTable" size="110,16" id="{UMLID=_VfK3uWJ1Ed-xWeWwTs5e_Q,JavaID=table/Table#selectFromTable([Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Table" size="66,16" id="{UMLID=_Vf7FoWJ1Ed-xWeWwTs5e_Q,JavaID=table/Table#Table()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="main" size="119,16" id="{UMLID=_Vf7FomJ1Ed-xWeWwTs5e_Q,JavaID=table/Table#main([Ltable.WhereCondition;[I)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateTable" size="119,16" id="{UMLID=_Vfnjo2J1Ed-xWeWwTs5e_Q,JavaID=table/Table#updateTable([Ltable.WhereCondition;[I)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Table" size="66,16" id="{UMLID=_Vf7FrWJ1Ed-xWeWwTs5e_Q,JavaID=table/Table#Table(Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTableName" size="108,16" id="{UMLID=_VfxUomJ1Ed-xWeWwTs5e_Q,JavaID=table/Table#getTableName()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTableFields" size="115,21" id="{UMLID=_VgOAmWJ1Ed-xWeWwTs5e_Q,JavaID=table/Table#getTableFields()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTableBitMap" size="113,16" id="{UMLID=_VgXKhGJ1Ed-xWeWwTs5e_Q,JavaID=table/Table#getTableBitMap()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateBitMap" size="105,16" id="{UMLID=_VgEPlWJ1Ed-xWeWwTs5e_Q,JavaID=table/Table#updateBitMap(Lfileio.BitMap;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getFieldCfg" size="94,16" id="{UMLID=_VfK3smJ1Ed-xWeWwTs5e_Q,JavaID=table/Table#getFieldCfg(Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTablePath" size="102,16" id="{UMLID=_VfBtxWJ1Ed-xWeWwTs5e_Q,JavaID=table/Table#getTablePath()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insertIntoTable" size="97,16" id="{UMLID=_VfeZtmJ1Ed-xWeWwTs5e_Q,JavaID=table/Table#insertIntoTable(Ljava.lang.String;[Ltable.Field;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="createTable" size="97,16" id="{UMLID=_Vgg7h2J1Ed-xWeWwTs5e_Q,JavaID=table/Table#createTable([Ltable.Field;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isTableExist" size="97,16" id="{UMLID=_VgXKgWJ1Ed-xWeWwTs5e_Q,JavaID=table/Table#isTableExist()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="selectAllFromTable" size="131,16" id="{UMLID=_VfeZsWJ1Ed-xWeWwTs5e_Q,JavaID=table/Table#selectAllFromTable()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="selectFromTable" size="119,16" id="{UMLID=_VgOAkWJ1Ed-xWeWwTs5e_Q,JavaID=table/Table#selectFromTable([Ltable.WhereCondition;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="deleteAllFromTable" size="131,16" id="{UMLID=_VfnjrGJ1Ed-xWeWwTs5e_Q,JavaID=table/Table#deleteAllFromTable()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toDDLString" size="97,16" id="{UMLID=_VgEPkmJ1Ed-xWeWwTs5e_Q,JavaID=table/Table#toDDLString()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="deleteFromTable" size="99,16" id="{UMLID=_VfUotGJ1Ed-xWeWwTs5e_Q,JavaID=table/Table#deleteFromTable([Ltable.UpdateSetPair;[Ltable.WhereCondition;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="createTable" size="119,16" id="{UMLID=_Ve38x2J1Ed-xWeWwTs5e_Q,JavaID=table/Table#createTable([Ltable.WhereCondition;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateTable" size="62,16" id="{UMLID=_VfBtyGJ1Ed-xWeWwTs5e_Q,JavaID=table/Table#updateTable([Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="deleteFromTable" size="99,16" id="{UMLID=_VgXKh2J1Ed-xWeWwTs5e_Q,JavaID=table/Table#deleteFromTable([Ltable.UpdateSetPair;[Ltable.WhereCondition;[I)}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showMethods="true" showAttributes="true" showLiterals="true" ShowInnerEntity="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="TableWithIndex" location="214,109" size="170,561" timstampe="4636" stereotype="" id="{UMLID=_KlRydGJ0Ed-xWeWwTs5e_Q,JavaID=table/TableWithIndex}" runTimeClassModel="TableWithIndex(Ljava.lang.String;Ljava.lang.String;),main([Ljava.lang.String;),getIndexName(),toDDLString(),deleteAllFromTable(),TableWithIndex(Ljava.lang.String;),checkIndex(),CfgFileExt,indexFieldName,updateIndexTreeToFile(),updateIndexTree(),insertIntoTable([Ljava.lang.String;),TreeFileExt,initIndexTree(Lfileio.BitMap;[Ltable.Field;),getIndexTree(),indexName,TableWithIndex(),deleteFromTable([Ltable.WhereCondition;[I),getIndexFieldName(),updateIndexInfo(),createIndex(Ljava.lang.String;Ljava.lang.String;),setIndexName(Ljava.lang.String;),updateTable([Ltable.UpdateSetPair;[Ltable.WhereCondition;[I),indexTree,IndexDir,isIndexExist(),getIndexPath(),indexTreeMaxKeyCount">
+    <children xsi:type="editmodel:CompartmentEditModel" size="144,108">
+      <children xsi:type="editmodel:AttributeEditModel" name="IndexDir" size="68,16" id="{UMLID=_Vr1asmJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="CfgFileExt" size="77,16" id="{UMLID=_Vr1atmJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="TreeFileExt" size="82,16" id="{UMLID=_Vr1asGJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="indexTreeMaxKeyCount" size="144,16" id="{UMLID=_Vr_LsmJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="indexName" size="82,16" id="{UMLID=_Vr1atGJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="indexFieldName" size="104,16" id="{UMLID=_Vr_LsGJ1Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="indexTree" size="83,21" id="{UMLID=_Vr_LtGJ1Ed-xWeWwTs5e_Q}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="149,383">
+      <children xsi:type="editmodel:MethodEditModel" name="TableWithIndex" size="113,16" id="{UMLID=_VtVPhWJ1Ed-xWeWwTs5e_Q,JavaID=table/TableWithIndex#TableWithIndex()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="TableWithIndex" size="113,16" id="{UMLID=_VsloqWJ1Ed-xWeWwTs5e_Q,JavaID=table/TableWithIndex#TableWithIndex(Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="TableWithIndex" size="113,16" id="{UMLID=_VsI8uWJ1Ed-xWeWwTs5e_Q,JavaID=table/TableWithIndex#TableWithIndex(Ljava.lang.String;Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="checkIndex" size="95,16" id="{UMLID=_Vs4jlmJ1Ed-xWeWwTs5e_Q,JavaID=table/TableWithIndex#checkIndex()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIndexName" size="108,16" id="{UMLID=_VsI8s2J1Ed-xWeWwTs5e_Q,JavaID=table/TableWithIndex#getIndexName()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setIndexName" size="108,16" id="{UMLID=_Vr_Lt2J1Ed-xWeWwTs5e_Q,JavaID=table/TableWithIndex#setIndexName(Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateIndexInfo" size="117,16" id="{UMLID=_VsSGpGJ1Ed-xWeWwTs5e_Q,JavaID=table/TableWithIndex#updateIndexInfo()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIndexPath" size="102,16" id="{UMLID=_VtBthWJ1Ed-xWeWwTs5e_Q,JavaID=table/TableWithIndex#getIndexPath()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="createIndex" size="97,16" id="{UMLID=_Vs4jl2J1Ed-xWeWwTs5e_Q,JavaID=table/TableWithIndex#createIndex(Ljava.lang.String;Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initIndexTree" size="101,16" id="{UMLID=_VtLehWJ1Ed-xWeWwTs5e_Q,JavaID=table/TableWithIndex#initIndexTree(Lfileio.BitMap;[Ltable.Field;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateIndexTree" size="121,16" id="{UMLID=_Vs4jkmJ1Ed-xWeWwTs5e_Q,JavaID=table/TableWithIndex#updateIndexTree()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isIndexExist" size="97,16" id="{UMLID=_Vs4jk2J1Ed-xWeWwTs5e_Q,JavaID=table/TableWithIndex#isIndexExist()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIndexFieldName" size="130,16" id="{UMLID=_VsI8tmJ1Ed-xWeWwTs5e_Q,JavaID=table/TableWithIndex#getIndexFieldName()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getIndexTree" size="109,21" id="{UMLID=_VsSGpWJ1Ed-xWeWwTs5e_Q,JavaID=table/TableWithIndex#getIndexTree()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateIndexTreeToFile" size="149,16" id="{UMLID=_VsloqGJ1Ed-xWeWwTs5e_Q,JavaID=table/TableWithIndex#updateIndexTreeToFile()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insertIntoTable" size="110,16" id="{UMLID=_VtBtiGJ1Ed-xWeWwTs5e_Q,JavaID=table/TableWithIndex#insertIntoTable([Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="deleteAllFromTable" size="131,16" id="{UMLID=_VsI8sGJ1Ed-xWeWwTs5e_Q,JavaID=table/TableWithIndex#deleteAllFromTable()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="deleteFromTable" size="119,16" id="{UMLID=_VsuylmJ1Ed-xWeWwTs5e_Q,JavaID=table/TableWithIndex#deleteFromTable([Ltable.WhereCondition;[I)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateTable" size="99,16" id="{UMLID=_Vsb3oGJ1Ed-xWeWwTs5e_Q,JavaID=table/TableWithIndex#updateTable([Ltable.UpdateSetPair;[Ltable.WhereCondition;[I)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toDDLString" size="97,16" id="{UMLID=_VtVPgmJ1Ed-xWeWwTs5e_Q,JavaID=table/TableWithIndex#toDDLString()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="main" size="62,16" id="{UMLID=_VsuykmJ1Ed-xWeWwTs5e_Q,JavaID=table/TableWithIndex#main([Ljava.lang.String;)}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" size="2,1" id="{UMLID=_VrPk0WJ1Ed-xWeWwTs5e_Q}" source="//@children.4" target="//@children.3" targetEnd="//@children.4/@sourceConnections.0/@children.1" sourceEnd="//@children.4/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="91,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="64,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showMethods="true" showAttributes="true" showLiterals="true" ShowInnerEntity="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true" showMethods="true" showAttributes="true" showLiterlas="true" showInnerEntity="true"/>
+</editmodel:ClassDiagramEditModel>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="fileioClassDiagram" foregroundRGB="255,255,255" id="{UMLID=_Ko2D1GJ0Ed-xWeWwTs5e_Q,JavaID=fileio}" metadata="uml2-1.0" initialized="true" tag="10" key="32303037303632392042506C757354726565496E646578">
+  <children xsi:type="editmodel:ClassEditModel" name="BitMap" location="50,50" size="141,461" timstampe="3225" stereotype="" description="UML" id="{UMLID=_Ko2D1WJ0Ed-xWeWwTs5e_Q}" runTimeClassModel="getFormFile(Ljava.io.File;),main([Ljava.lang.String;),setMap([Z),setSize(I),getSize(),getFormFile(Ljava.lang.String;),getFirstAvailable(),set(I),getSetNum(),toString(),size,getClearNum(),toFile(Ljava.lang.String;),clear(I),get(I),BitMap([Z),map,serialVersionUID,BitMap(I),reset(),toFile(Ljava.io.File;),getMap(),showMap()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="109,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="serialVersionUID" size="109,16" id="{UMLID=_fCGxFGJ2Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="size" size="49,16" id="{UMLID=_fCGxFmJ2Ed-xWeWwTs5e_Q}"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="map" size="49,16" id="{UMLID=_fCGxEGJ2Ed-xWeWwTs5e_Q}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="120,360">
+      <children xsi:type="editmodel:MethodEditModel" name="BitMap" size="72,16" id="{UMLID=_fCZsAGJ2Ed-xWeWwTs5e_Q,JavaID=fileio/BitMap#BitMap(I)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="BitMap" size="72,16" id="{UMLID=_fCP7AGJ2Ed-xWeWwTs5e_Q,JavaID=fileio/BitMap#BitMap([Z)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getMap" size="75,16" id="{UMLID=_fCjdB2J2Ed-xWeWwTs5e_Q,JavaID=fileio/BitMap#getMap()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setMap" size="75,16" id="{UMLID=_fC2X9mJ2Ed-xWeWwTs5e_Q,JavaID=fileio/BitMap#setMap([Z)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getSize" size="76,16" id="{UMLID=_fCjdAGJ2Ed-xWeWwTs5e_Q,JavaID=fileio/BitMap#getSize()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSize" size="76,16" id="{UMLID=_fCZsB2J2Ed-xWeWwTs5e_Q,JavaID=fileio/BitMap#setSize(I)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="reset" size="65,16" id="{UMLID=_fCZsA2J2Ed-xWeWwTs5e_Q,JavaID=fileio/BitMap#reset()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="get" size="55,16" id="{UMLID=_fCsm92J2Ed-xWeWwTs5e_Q,JavaID=fileio/BitMap#get(I)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="set" size="55,16" id="{UMLID=_fDJS4WJ2Ed-xWeWwTs5e_Q,JavaID=fileio/BitMap#set(I)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="clear" size="64,16" id="{UMLID=_fDAI9WJ2Ed-xWeWwTs5e_Q,JavaID=fileio/BitMap#clear(I)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getFirstAvailable" size="120,16" id="{UMLID=_fCZsBGJ2Ed-xWeWwTs5e_Q,JavaID=fileio/BitMap#getFirstAvailable()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getSetNum" size="92,16" id="{UMLID=_fDAI8mJ2Ed-xWeWwTs5e_Q,JavaID=fileio/BitMap#getSetNum()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getClearNum" size="101,16" id="{UMLID=_fC2X-mJ2Ed-xWeWwTs5e_Q,JavaID=fileio/BitMap#getClearNum()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="showMap" size="88,16" id="{UMLID=_fCP7CmJ2Ed-xWeWwTs5e_Q,JavaID=fileio/BitMap#showMap()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" size="77,16" id="{UMLID=_fDAI-GJ2Ed-xWeWwTs5e_Q,JavaID=fileio/BitMap#toString()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toFile" size="65,16" id="{UMLID=_fCP7BGJ2Ed-xWeWwTs5e_Q,JavaID=fileio/BitMap#toFile(Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toFile" size="65,16" id="{UMLID=_fCsm8WJ2Ed-xWeWwTs5e_Q,JavaID=fileio/BitMap#toFile(Ljava.io.File;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getFormFile" size="95,16" id="{UMLID=_fDJS5GJ2Ed-xWeWwTs5e_Q,JavaID=fileio/BitMap#getFormFile(Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getFormFile" size="95,16" id="{UMLID=_fC2X8WJ2Ed-xWeWwTs5e_Q,JavaID=fileio/BitMap#getFormFile(Ljava.io.File;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="main" size="62,16" id="{UMLID=_fCjdA2J2Ed-xWeWwTs5e_Q,JavaID=fileio/BitMap#main([Ljava.lang.String;)}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showMethods="true" showAttributes="true" showLiterals="true" ShowInnerEntity="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true" showMethods="true" showAttributes="true" showLiterlas="true" showInnerEntity="true"/>
+</editmodel:ClassDiagramEditModel>

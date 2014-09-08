@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:DeploymentDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="srcDeploymentDiagram" id="{UMLID=_v77-EGL8Ed-cHIg3XDXlZQ,JavaID=}" metadata="uml2-1.0" tag="10" key="32303037303632392042506C757354726565496E646578">
+  <diagramOptions xsi:type="options:DeploymentDiagramOptions" level="0" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+</editmodel:DeploymentDiagramEditModel>
