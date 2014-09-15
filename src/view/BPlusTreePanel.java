@@ -1,10 +1,17 @@
 package view;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.util.HashMap;
 
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
-import bplustree.*;
+import bplustree.BPlusTree;
+import bplustree.BPlusTreeNode;
 
 public class BPlusTreePanel extends JPanel{
 	private static final long serialVersionUID = 1L;
@@ -12,14 +19,26 @@ public class BPlusTreePanel extends JPanel{
 	private int elementWidth = 30;
 	private int elementHeight = 40;
 	private BPlusTree bPlusTree;
+	private HashMap<BPlusTreeNode, RectPosition> nodePositionsMap;
+	private class RectPosition {
+		int x,y,w,h;
+		RectPosition(int x, int y, int w, int h) {
+			this.x = x;
+			this.y = y;
+			this.w = w;
+			this.h = h;
+		}
+	}
 	
 	/**
 	 * 构造方法：初始化BPlusTree
 	 * @param bPlusTree
 	 */
 	public BPlusTreePanel(BPlusTree bPlusTree){
+		super();
 		this.setLayout(null);
-		this.bPlusTree = bPlusTree;
+		this.nodePositionsMap = new HashMap<BPlusTreeNode, RectPosition>();
+		setBPlusTree(bPlusTree);
 	}
 	
 	/**
@@ -27,7 +46,11 @@ public class BPlusTreePanel extends JPanel{
 	 * @param bPlusTree
 	 */
 	public void setBPlusTree(BPlusTree bPlusTree){
+		if (bPlusTree==null) {
+			return;
+		}
 		this.bPlusTree = bPlusTree;
+		this.nodePositionsMap.clear();
 		this.repaint();
 	}
 	
@@ -54,7 +77,7 @@ public class BPlusTreePanel extends JPanel{
 		int width = leafNodeCount*(maxKeyCount*elementWidth*2)+30;
 		int height = (2*treeHeight-1)*elementHeight+50;
 		//System.out.println("width:"+width+",height:"+height);
-		placeNode(root,width/2,20,treeHeight-1);
+		placeNode(root,width/2,50,treeHeight-1);
 		setPreferredSize(new Dimension(width, height));
 	}
 	
@@ -71,6 +94,7 @@ public class BPlusTreePanel extends JPanel{
 			//System.out.println("position:("+x_pos+","+y_pos+")");
 			//System.out.println("num:"+n+":("+x+","+y+")|("+w+","+h+")");
 			this.drawNode(node, x, y, w, h);
+			nodePositionsMap.put(node, new RectPosition(x, y, w, h));
 			
 			if(!node.isLeaf()){//有子结点
 				int interval = this.bPlusTree.getMaxKeyCount()*level;
@@ -82,6 +106,14 @@ public class BPlusTreePanel extends JPanel{
 					drawArrow(x_pos+deltaWidth/2, y_pos+elementHeight,
 							new_x_pos, new_y_pos);
 					this.placeNode(node.getChildAt(i), new_x_pos, new_y_pos, level-1);
+				}
+			}
+
+			BPlusTreeNode nextNode = node.getNext();
+			if (nextNode != null) { // 有下一节点
+				RectPosition rectPos = nodePositionsMap.get(nextNode);
+				if (rectPos != null) {
+					drawArrow(x+w+2, y+elementHeight/2, rectPos.x-2, rectPos.y+elementHeight/2);
 				}
 			}
 		}
@@ -187,7 +219,7 @@ public class BPlusTreePanel extends JPanel{
 		JFrame f = new JFrame();
 		f.add(new JScrollPane(p));
 		f.setTitle("B+树显示测试");
-		f.setSize(300, 200);
+		f.setSize(800, 500);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setVisible(true);
 		/*

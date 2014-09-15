@@ -46,7 +46,7 @@ public class BPlusTreeDialog extends JDialog{
 	public BPlusTreeDialog(BPlusTree bPlusTree,String tableName){
 		super();
 		this.setModal(true);
-		this.setSize(400, 300);
+		this.setSize(800, 500);
 		this.bPlusTree = bPlusTree;
 		this.setTitle(tableName+" -- Index B+Ê÷");
 		initBPlusTree();
