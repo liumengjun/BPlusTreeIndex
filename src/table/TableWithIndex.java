@@ -1,8 +1,18 @@
 package table;
 
-import java.io.*;
-import fileio.*;
-import bplustree.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.RandomAccessFile;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import bplustree.BPlusTree;
+import fileio.BitMap;
 
 public class TableWithIndex extends Table {
 	public static final String IndexDir = "index";
@@ -362,6 +372,120 @@ public class TableWithIndex extends Table {
 					+ this.indexName + TreeFileExt;
 			indexTree.toFile(treeFileName);
 		}
+	}
+
+	/**
+	 * 查询表格tableName符合条件conditions AndOrs组成的条件的内容
+	 * 
+	 * @param conditions
+	 * @param AndOrs
+	 * @return
+	 */
+	public String[][] selectFromTable(WhereCondition[] conditions, int[] AndOrs) {
+		int condFiledIsIndex = -1; // 暂时只支持一个条件表达式用于索引
+		if (conditions != null && conditions.length > 0) {
+			// 如果条件表达式字段为索引字段，则从索引读取，否则不用索引
+			for (int i=0; i<conditions.length; i++) {
+				if (conditions[i].fieldName.equalsIgnoreCase(this.indexFieldName)) {
+					if (AndOrs==null || AndOrs.length==0
+							|| (i==0 && AndOrs[0]==WhereCondition.RelationAndOp)
+							|| (AndOrs[i-1]==WhereCondition.RelationAndOp && (AndOrs.length<=i || (AndOrs[i]==WhereCondition.RelationAndOp)))
+							) { // 前后必须是and条件
+						condFiledIsIndex = i;
+						break; // 暂时只支持一个条件表达式用于索引
+					}
+				}
+			}
+		}
+		if (condFiledIsIndex == -1 || indexTree==null) {
+			return super.selectFromTable(conditions, AndOrs);
+		}
+		resetIOCount();
+		// 表格所在目录
+		File tableDir = new File(rootDir + tableName);
+		boolean isDirectory = tableDir.isDirectory();
+		if (!isDirectory) {
+			System.out.println("表格：" + tableName + "不存在");
+			return null;
+		}
+
+		/* 表文件通用前缀 */
+		String tableFilesPrefix = tableDir.getPath() + File.separator
+				+ tableName;
+
+		/* 读取配置文件 */
+		String cfgFileName = tableFilesPrefix + CfgFileExt;
+		Field[] fields;
+		if (tableFields != null)
+			fields = tableFields;
+		else {
+			fields = getFieldCfg(cfgFileName);
+			tableFields = fields;
+		}
+		if (fields == null) {
+			System.out.println("读取配置文件" + cfgFileName + "失败");
+			return null;
+		}
+		int fieldCount = fields.length;
+		int recordSize = 0;
+		for (int i = 0; i < fieldCount; i++) {
+			recordSize += fields[i].fieldSize;
+		}
+
+		/* 读取位图文件 */
+		String mapFileName = tableFilesPrefix + MapFileExt;
+		BitMap map = BitMap.getFormFile(mapFileName);
+		if (map == null) {
+			System.out.println("读取位图文件" + mapFileName + "失败");
+			return null;
+		}
+		int totalRecord = map.getSetNum();
+		if (totalRecord == 0) {
+			// 总记录数为0，则直接返回
+			return new String[0][fieldCount];
+		}
+		
+		/* 读取索引树*/
+		WhereCondition wc = conditions[condFiledIsIndex];
+		List<Long> addrList = indexTree.search(Integer.valueOf(wc.referencValue), wc.comparisonOp);
+		if (addrList == null) {
+			return null;
+		}
+		
+		/* 读取数据文件 */
+		String dataFileName = tableFilesPrefix + DataFileExt;
+		File dataFile = new File(dataFileName);
+		RandomAccessFile dataStream = null;
+		ArrayList<String[]> resultList = new ArrayList<String[]>(totalRecord);
+		try {
+			dataStream = new RandomAccessFile(dataFile, "r");
+			//boolean[] bits = map.getMap();
+			byte[] buf = new byte[recordSize];
+			String[] oneRecord;
+			Collections.sort(addrList);
+			for (int i = 0; i < addrList.size(); i++) {
+				// 读取一条记录，读到buf中
+				dataStream.seek(addrList.get(i) * recordSize);
+				dataStream.readFully(buf);
+				incIOCount();
+				// 将buf数据转化为String[]
+				oneRecord = Field.parseBytesToStrings(buf, fields);
+				if (WhereCondition.checkRecordByFields(oneRecord, fields,
+						conditions, AndOrs))
+					resultList.add(oneRecord);
+				// System.out.println(resultList.size());
+			}
+			dataStream.close();
+		} catch (IOException e) {
+			System.out.println("读取数据文件失败");
+			e.printStackTrace();
+			return null;
+		}
+		/*转换*/
+		String[][] resultSet = new String[resultList.size()][];
+		resultList.toArray(resultSet);
+
+		return resultSet;
 	}
 	
 	/**

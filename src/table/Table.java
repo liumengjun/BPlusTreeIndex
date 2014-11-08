@@ -16,6 +16,7 @@ public class Table {
 
 	String tableName;
 	Field[] tableFields;
+	int ioCount;
 
 	/**
 	 * 空的构造方法
@@ -57,6 +58,18 @@ public class Table {
 			tableFields = getFieldCfg(cfgFileName);
 		}
 		return tableFields;
+	}
+	
+	void resetIOCount() {
+		ioCount = 0;
+	}
+	
+	void incIOCount() {
+		ioCount++;
+	}
+	
+	public int getIOCount() {
+		return ioCount;
 	}
 
 	/**
@@ -260,6 +273,7 @@ public class Table {
 	 * @return
 	 */
 	public String[][] selectAllFromTable() {
+		resetIOCount();
 		if (this.tableName == null) {
 			System.out.println("还没有指定表的名字");
 			return null;
@@ -325,6 +339,7 @@ public class Table {
 					// 读取一条记录，读到buf中
 					dataStream.seek(i * recordSize);
 					dataStream.readFully(buf);
+					incIOCount();
 					// 将buf数据转化为String[]
 					oneRecord = Field.parseBytesToStrings(buf, fields);
 					for (int j = 0; j < fieldCount; j++) {
@@ -358,7 +373,7 @@ public class Table {
 			System.out.println("还没有指定表的名字");
 			return null;
 		}
-
+		resetIOCount();
 		// 表格所在目录
 		File tableDir = new File(rootDir + tableName);
 		boolean isDirectory = tableDir.isDirectory();
@@ -418,6 +433,7 @@ public class Table {
 					// 读取一条记录，读到buf中
 					dataStream.seek(i * recordSize);
 					dataStream.readFully(buf);
+					incIOCount();
 					// 将buf数据转化为String[]
 					oneRecord = Field.parseBytesToStrings(buf, fields);
 					if (WhereCondition.checkRecordByFields(oneRecord, fields,
@@ -455,7 +471,7 @@ public class Table {
 			System.out.println("还没有指定表的名字");
 			return null;
 		}
-
+		resetIOCount();
 		// 表格所在目录
 		File tableDir = new File(rootDir + tableName);
 		boolean isDirectory = tableDir.isDirectory();
@@ -515,6 +531,7 @@ public class Table {
 					// 读取一条记录，读到buf中
 					dataStream.seek(i * recordSize);
 					dataStream.readFully(buf);
+					incIOCount();
 					// 将buf数据转化为String[]
 					oneRecord = Field.parseBytesToStrings(buf, fields);
 					if (WhereCondition.checkRecordByFields(oneRecord, fields,

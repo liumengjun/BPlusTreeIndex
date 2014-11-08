@@ -109,7 +109,7 @@ public class WhereCondition {
 		//p1 = ddl.indexOf(' ');
 		i=0;
 		while(i<ddl.length()){
-			if(!Character.isLetter(ddl.charAt(i)))//不是字符(空格也不是字符)
+			if(!Character.isLetterOrDigit(ddl.charAt(i)))//不是字符(空格也不是字符)
 				break;
 			i++;
 		}

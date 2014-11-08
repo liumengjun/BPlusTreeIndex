@@ -1,7 +1,16 @@
 package bplustree;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
+
+import table.WhereCondition;
 
 public class BPlusTree implements Serializable
 {
@@ -67,6 +76,99 @@ public class BPlusTree implements Serializable
 			}
 		}
 		return -1;
+	}
+	
+	/**
+	 * 搜索与key比较值为true的关键字所指向的数据位置
+	 * @param key 作为搜索的依据
+	 * @param compareOp 比较比较操作符{@link table.WhereCondition}
+	 * @return
+	 */
+	public List<Long> search(int key, int compareOp) {
+		if (this.root == null || key > this.root.key[this.root.num - 1]) {
+			// root为null 或 key大于树中最大key
+			return null;
+		}
+		BPlusTreeNode node = this.root;
+		int i;
+
+		while (node!=null) {
+			for (i = 0; node.key[i] < key; i++);
+			if (node.isLeaf == false) {// 中间结点
+				node = node.children[i];
+			} else {
+				//System.out.println("找到关键字参考值"+node.key[i]);
+				List<Long> addrList = new ArrayList<Long>();
+				switch (compareOp) {
+					case WhereCondition.LikeOp:
+					case WhereCondition.EqualOp:
+						gatherEqualKey(key, i, node, addrList);
+						break;
+					case WhereCondition.LessEqualOp:
+						gatherEqualKey(key, i, node, addrList);
+					case WhereCondition.LessThanOp:
+						gatherLessKey(key, i, node, addrList);
+						break;
+					case WhereCondition.GreatEqualOp:
+						gatherEqualKey(key, i, node, addrList);
+					case WhereCondition.GreatThanOp:
+						gatherGreaterKey(key, i, node, addrList);
+						break;
+					case WhereCondition.NotEqualOp:
+						gatherLessKey(key, i, node, addrList);
+						gatherGreaterKey(key, i, node, addrList);
+						break;
+					default:
+						break;
+				}
+				return addrList;
+			}
+		}
+		return null;
+	}
+		
+	private void gatherEqualKey(int key, int i, BPlusTreeNode node, List<Long> addrList) {
+		for (int t = i; t < node.num && node.key[t] == key; t++) {
+			addrList.add(Long.valueOf(node.addr[t]));
+		}
+		BPlusTreeNode tmp = node.next;
+		ge: while (tmp!=null && tmp!=this.first) {
+			for (int t = 0; t < tmp.num; t++) {
+				if (tmp.key[t] == key) {
+					addrList.add(Long.valueOf(tmp.addr[t]));
+				} else {
+					break ge;
+				}
+			}
+			tmp = tmp.next;
+		}
+	}
+	
+	private void gatherLessKey(int key, int i, BPlusTreeNode node, List<Long> addrList) {
+		BPlusTreeNode tmpLt = this.first;
+		while (tmpLt!=null && tmpLt!=node) {
+			for (int t = 0; t < tmpLt.num; t++) {
+				addrList.add(Long.valueOf(tmpLt.addr[t]));
+			}
+			tmpLt = tmpLt.next;
+		}
+		for (int t = 0; t < tmpLt.num && tmpLt.key[t] < key; t++) {
+			addrList.add(Long.valueOf(tmpLt.addr[t]));
+		}
+	}
+	
+	private void gatherGreaterKey(int key, int i, BPlusTreeNode node, List<Long> addrList) {
+		BPlusTreeNode tmpGt = node;
+		for (int t = i+1; t < tmpGt.num && tmpGt.key[t] > key; t++) {
+			addrList.add(Long.valueOf(tmpGt.addr[t]));
+		}
+		tmpGt = tmpGt.next;
+		while (tmpGt!=null && tmpGt!=this.first) {
+			for (int t = 0; t < tmpGt.num; t++) {
+				addrList.add(Long.valueOf(tmpGt.addr[t]));
+			}
+			tmpGt = tmpGt.next;
+		}
 	}
 	
 	/**
@@ -685,7 +787,7 @@ public class BPlusTree implements Serializable
 		btree1.showTree();
 		*/
 		
-		int list[]={52,187,98,180,148,88,122,8,58,129,184,87,74,71,111,198,74,181,185,86};
+		int list[]={52,52,187,98,180,148,88,122,8,58,129,184,87,74,71,111,198,74,181,185,86};
 		//int list[] = { 52, 187, 98, 180, 148, 88, 122, 8, 58, 129, 184 };
 		int n = list.length;
 
@@ -709,7 +811,7 @@ public class BPlusTree implements Serializable
 		//输出树结构
 		b.print_tree_2();
 		System.out.println("------------------------------------");
-		//b.print_leaf_layer();
+		b.print_leaf_layer();
 		//System.out.println("------------------------------------");
 		System.out.println("一共" + n + "个关键字\n");
 
@@ -719,6 +821,17 @@ public class BPlusTree implements Serializable
 		System.out.println("address="+addr);
 		addr = b.search(129);
 		System.out.println("address="+addr);
+		List<Long> l = b.search(74, WhereCondition.EqualOp);
+		System.out.println(l);
+		l = b.search(74, WhereCondition.LessEqualOp);
+		System.out.println(l);
+		l = b.search(74, WhereCondition.LessThanOp);
+		System.out.println(l);
+		l = b.search(74, WhereCondition.GreatThanOp);
+		System.out.println(l);
+		if (true) {
+			return;
+		}
 		
 		//从B+树中移除关键字
 		boolean flag;

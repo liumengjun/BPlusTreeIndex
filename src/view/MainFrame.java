@@ -503,61 +503,52 @@ public class MainFrame extends JFrame implements ActionListener,TreeSelectionLis
 			while(sql.charAt(p2)==' '){	p2++; }//跳过空格
 			int p3 = sql.indexOf(' ',p2);
 			String tableName;
+			String[][] data = null;
+			TableWithIndex theTable = null;
 			if(p3==-1){
 				tableName = sqlUpper.substring(p2);
-				TableWithIndex theTable = new TableWithIndex(tableName);
+				theTable = new TableWithIndex(tableName);
 				System.out.println("select all from table:"+tableName);
 				sqlRunTextArea.append("select all from table:"+tableName+"\n");
-				String[][] data = theTable.selectAllFromTable();
-				if(data!=null){
-					System.out.println("总记录数：" + data.length);
-					sqlRunTextArea.append("总记录数：" + data.length+"\n");
-					for (int i = 0; i < data.length; i++) {
-						for (int j = 0; j < data[i].length; j++) {
-							System.out.print(data[i][j] + " ");
-							sqlRunTextArea.append(data[i][j] + " ");
-						}
-						System.out.println();
-						sqlRunTextArea.append("\n");
-					}
-				}else{
-					System.out.println("出现错误!");
-					sqlRunTextArea.append("出现错误\n");
-				}
+				data = theTable.selectAllFromTable();
 			}else{
 				tableName = sqlUpper.substring(p2,p3);
-				TableWithIndex theTable = new TableWithIndex(tableName);
+				theTable = new TableWithIndex(tableName);
 				String wheresSql = sql.substring(p3).trim();
 				ArrayList<Integer> andOrsList = new ArrayList<Integer>(5);
 				WhereCondition[] wcs = WhereCondition.getWheresFromDDLString(wheresSql, andOrsList);
-				int[] andOrs = WhereCondition.getAndOrs(andOrsList);
-				//开始select
-				System.out.println("select all from table:" + tableName	+ ", where:");
-				sqlRunTextArea.append("select all from table:" + tableName + "\n");
-				int i;
-				// 输出表达式
-				for (i = 0; i < andOrs.length; i++) {
-					System.out.print(wcs[i].toString() + " "
-						+ ((andOrs[i] == WhereCondition.RelationAndOp) ? "And" : "Or")
-						+ " ");
-				}
-				System.out.println(wcs[i].toString());
-				String[][] data = theTable.selectFromTable(wcs, andOrs);
-				if (data != null) {
-					System.out.println("总记录数：" + data.length);
-					sqlRunTextArea.append("总记录数：" + data.length + "\n");
-					for (i = 0; i < data.length; i++) {
-						for (int j = 0; j < data[i].length; j++) {
-							System.out.print(data[i][j] + " ");
-							sqlRunTextArea.append(data[i][j] + " ");
-						}
-						System.out.println();
-						sqlRunTextArea.append("\n");
+				if (wcs != null) {
+					int[] andOrs = WhereCondition.getAndOrs(andOrsList);
+					//开始select
+					System.out.println("select all from table:" + tableName	+ ", where:");
+					sqlRunTextArea.append("select all from table:" + tableName + "\n");
+					int i;
+					// 输出表达式
+					for (i = 0; i < andOrs.length; i++) {
+						System.out.print(wcs[i].toString() + " "
+							+ ((andOrs[i] == WhereCondition.RelationAndOp) ? "And" : "Or")
+							+ " ");
 					}
-				} else {
-					System.out.println("出现错误!");
-					sqlRunTextArea.append("出现错误\n");
+					System.out.println(wcs[i].toString());
+					data = theTable.selectFromTable(wcs, andOrs);
 				}
+			}
+			if (data != null) {
+				System.out.println("总记录数：" + data.length);
+				sqlRunTextArea.append("总记录数：" + data.length + "\n");
+				for (int i = 0; i < data.length; i++) {
+					for (int j = 0; j < data[i].length; j++) {
+						System.out.print(data[i][j] + " ");
+						sqlRunTextArea.append(data[i][j] + " ");
+					}
+					System.out.println();
+					sqlRunTextArea.append("\n");
+				}
+				System.out.println("IO Count: " + theTable.getIOCount());
+				sqlRunTextArea.append("IO Count: " + theTable.getIOCount() + "\n");
+			} else {
+				System.out.println("出现错误!");
+				sqlRunTextArea.append("出现错误\n");
 			}
 			//end select
 		}else if(opTitle.equals("INSERT")){
